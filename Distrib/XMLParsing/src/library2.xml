@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE library [
+    <!ELEMENT library (dvd)*>
+    <!ELEMENT dvd (genre|format|title)*>
+    <!ATTLIST dvd id CDATA #IMPLIED >
+
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT format (#PCDATA)>
+    <!ELEMENT genre (#PCDATA)>
+<!ENTITY lol "lol">
+  <!ENTITY lol1 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+  <!ENTITY lol2 "&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;">
+  <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+  <!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
+  <!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;">
+  <!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;">
+  <!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
+  <!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
+  <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
+]>
+<!-- This XML document describes a dvd library   -->
+<library>
+    <dvd id="1">
+        <title>Breakfast at Tiffany's</title>
+        <format>Movie</format>
+        <genre>&lol9;</genre>
+    </dvd>
+    <dvd id="2">
+        <title>Contact</title>
+        <format>Movie</format>
+        <genre>Science fiction</genre>
+    </dvd>
+    <dvd id="3">
+        <title>Little Britain</title>
+        <format>TV Series</format> 
+        <genre>Comedy</genre>
+    </dvd>
+</library>

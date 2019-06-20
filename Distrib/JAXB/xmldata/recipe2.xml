@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recipe prep_time = "10" cook_time = "300" >
+    <title>Chicken soup</title>
+    <ingredient amount="3" unit="gallon">Water</ingredient>
+    <ingredient amount="1" unit="piece" state="dead">Chicken</ingredient>
+    <instructions>
+        <step>Heat water</step>
+        <step>Add chicken</step>
+        <step>Boil for 5 hours</step>
+    </instructions>
+</recipe>
