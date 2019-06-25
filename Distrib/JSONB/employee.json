@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "firstname": "bernd",
+    "languages": ["German", "English", "Broken Python"],
+    "permanent": true,
+    "address": {
+        "street": "11th Street",
+        "city": "Old York",
+        "zipcode": 5555
+    },
+    "phoneNumbers": [441111, 2311101],
+    "role": "manager"
+}
