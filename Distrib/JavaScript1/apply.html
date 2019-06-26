@@ -1,0 +1,20 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Function application</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var f0 = function () {alert("Hello, world!");};
+            f0();
+            var f1 = function (name) {alert("Hello, " + name);};
+            f1("UWF");
+            (function () {alert("Hello again, world!");})();
+            (function (name) {alert("Hello again, " + name)})("UWF");
+        </script>
+    </body>
+</html>

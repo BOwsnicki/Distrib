@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body onload="foo(12);">
+        <script type="text/javascript">
+            var glob1 = 100;
+            function foo (param) {
+                var local = param + glob1;
+                document.getElementById('a').innerHTML = '' + local;
+                global = param;
+                bar();
+            }
+            function bar() {
+                document.getElementById('b').innerHTML = '' + global;
+            }
+        </script>
+        <div id="a"></div>
+        <div id="b"></div>
+    </body>
+
+</html>

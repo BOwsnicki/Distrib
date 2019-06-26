@@ -1,0 +1,22 @@
+{
+    "dvds": [
+        {
+            "id": 1,
+            "title": "Breakfast at Tiffany's",
+            "format": "Movie",
+            "genre": "Classic"
+        },
+        {
+            "id": 2,
+            "title": "Contact",
+            "format": "Movie",
+            "genre": "Science Fiction"
+        },
+        {
+            "id": 3,
+            "title": "Little Britain",
+            "format": "TV Series",
+            "genre": "Comedy"
+        }
+    ]
+}

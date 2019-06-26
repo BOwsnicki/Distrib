@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Global variables</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var glob1 = 100;
+            foo(12);
+            function foo (param) {
+                var local = param + glob1;
+                document.write(local);
+                glob1 = param;
+                bar();
+            }
+            function bar() {
+                document.write(" " + glob1);
+            }
+        </script>
+        <script type="text/javascript">bar();</script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function validate()
+            {
+                var at=document.getElementById("email").value.indexOf("@");
+                var age=document.getElementById("age").value;
+                var fname=document.getElementById("fname").value;
+                var submitOK = true;
+
+                if (fname.length > 10)
+                {
+                    alert("The name must be less than 10 characters");
+                    submitOK = false;
+                }
+                if (isNaN(age) || age<1 || age>100)
+                {
+                    alert("The age must be a number between 1 and 100");
+                    submitOK = false;
+                }
+                if (at == -1)
+                {
+                    alert("Not a valid e-mail!");
+                    submitOK = false;
+                }
+                return submitOK;
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="http://143.88.65.158/Echo/index.php" method="GET" onsubmit="return validate()">
+            Name (max 10 chararcters): <input type="text" id="fname" name="fname" size="20"><br />
+            Age (from 1 to 100): <input type="text" id="age" name="age" size="3"><br />
+            E-mail: <input type="text" id="email" name="email" size="20"><br />
+            <br />
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+
+</html>
+
+
