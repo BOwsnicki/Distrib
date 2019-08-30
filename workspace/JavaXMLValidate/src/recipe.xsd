@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://xml.netbeans.org/schema/recipe"
+    elementFormDefault="qualified">
+
+    <xs:element name="ingredient">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="amount" use="required" />
+                    <xs:attribute name="unit" use="required" />
+                    <xs:attribute name="state" use="optional" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="instructions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="step" type="xs:string" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="recipe">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string" />
+                <xs:element ref="ingredient" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="instructions" />
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="prep_time" type="xs:string" use="required"/>
+            <xs:attribute name="cook_time" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

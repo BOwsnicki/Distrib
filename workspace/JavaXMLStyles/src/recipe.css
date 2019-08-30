@@ -1,0 +1,32 @@
+/* 
+    Document   : reciphtml
+    Created on : Aug 8, 2011, 10:12:46 PM
+    Author     : Bernd
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+recipe { background:#ffffff; color:black;
+          font-family: Georgia, Times, serif;
+          font-size:14pt;
+          margin-left: 100px;
+}
+
+title {font-size: 16pt; font-weight:bold}
+
+ingredient, step { display: block; padding-top:20px;
+}
+
+ingredient:before { content: attr(amount) " " attr(unit) " "}
+
+
+instructions { color: red; position:relative; top:50px; font-weight: bold} 
+instructions:before { content: "Instructions"}
+
+step {font-weight: normal; counter-increment: steps}
+step:before {content: counter(steps) ". "}

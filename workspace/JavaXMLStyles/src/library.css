@@ -1,0 +1,29 @@
+
+library {
+    background:#990000;
+    color:white;
+    font-family: Georgia, Times, serif;
+    font-size:14pt;
+}
+
+dvd {
+    display: block;
+    padding-top:20px;
+}
+
+title {
+    font-variant:small-caps;
+}
+
+format {
+    color:black;
+}
+
+genre {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+genre:before {
+    content:"Genre: ";
+}
+

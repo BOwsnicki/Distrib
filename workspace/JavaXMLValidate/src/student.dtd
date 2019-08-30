@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/student.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE student SYSTEM "student.dtd">
+
+    <student>
+    ...
+    </student>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT student (courses|hometown|name)*>
+<!ATTLIST student
+    age CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT name (second|first)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT first (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT second (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT hometown (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT courses (course)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT course (#PCDATA)>

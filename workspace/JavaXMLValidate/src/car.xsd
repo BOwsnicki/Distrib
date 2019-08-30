@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/car"
+    xmlns:tns="http://xml.netbeans.org/schema/car"
+    elementFormDefault="qualified">
+    <xs:element name="car">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="licenseplate" type="xs:string" />
+                <xs:element name="vin" type="xs:string" />
+                <xs:element name="passenger" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="make" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

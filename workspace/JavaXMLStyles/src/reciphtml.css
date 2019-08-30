@@ -1,0 +1,19 @@
+/* 
+    Document   : reciphtml
+    Created on : Aug 8, 2011, 10:12:46 PM
+    Author     : Bernd
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body { 
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+ul {list-style-type: square}
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!--
+    TODO define vocabulary identification data
+    PUBLIC ID  : -//vendor//vocabulary//EN
+    SYSTEM ID  : http://server/path/__NAME__
+-->
+
+<!-- TODO define your own vocabulary/syntax. Example follows:  -->
+<!ELEMENT __ROOT__ ANY>
+
+<!-- This assumes that..
+_________________________________________________________________________________
+Note that the number of keywords is unlimited, the whole keywords element is
+optional, but if there is a keywords element, there must be at least one keyword.
+_________________________________________________________________________________
+
+...means that there may only be 0 or 1 "keywords" element, but if there IS a "keywords"
+element, then there must be at least one "keyword" element. -->
+
+<!ATTLIST __ROOT__ version CDATA #REQUIRED>
+
+<!-- There may be ZERO or ONE "keywords" element -->
+<!ELEMENT photo (creator, mimetype, location, width, height, keywords?)>
+<!ELEMENT creator (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+
+<!-- If there is a KEYWORDS type, there will be at least one keyword element -->
+<!ELEMENT keywords (keyword)+>
+<!ELEMENT keyword (#PCDATA)>
+    
+
+
+

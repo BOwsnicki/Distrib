@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE photo SYSTEM "photo.dtd">
+
+<photo>
+    <creator>Bernd OK</creator>
+    <mimetype>image/jpeg</mimetype>
+    <location>http://uwf.edu/bowsnickiklewe/public/facebox.jpg</location>
+    <width>1000</width>
+    <height>667</height>
+    <keywords>
+        <keyword>blackandwhite</keyword>
+        <keyword>box</keyword>
+        <keyword>face</keyword>
+    </keywords>
+</photo>

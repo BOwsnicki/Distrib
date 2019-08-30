@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT recipe (title,ingredient+,instructions)>
+<!ATTLIST recipe
+  cook_time CDATA #REQUIRED
+  name CDATA #REQUIRED
+  prep_time CDATA #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT ingredient (#PCDATA)>
+<!ATTLIST ingredient
+  amount CDATA #REQUIRED
+  state CDATA #IMPLIED
+  unit CDATA #REQUIRED>
+
+<!ELEMENT instructions (step)+>
+<!ELEMENT step (#PCDATA)>

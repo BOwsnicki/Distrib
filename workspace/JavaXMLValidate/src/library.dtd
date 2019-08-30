@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT library (dvd)*>
+<!ELEMENT dvd (genre|format|title)*>
+<!ATTLIST dvd id CDATA #IMPLIED >
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT format (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>

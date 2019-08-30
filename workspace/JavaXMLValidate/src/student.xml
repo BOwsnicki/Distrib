@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : book.xml
+    Created on : February 24, 2011, 1:52 PM
+    Author     : Bernd
+    Description:
+        Purpose of the document follows.
+-->
+
+<student age = "25">
+    <name>
+        <first>John</first>
+        <second>Doe</second>
+    </name>
+    <hometown>Pensacola</hometown>
+    <courses>
+        <course>COT3100</course>
+        <course>COP2253</course>
+    </courses>
+</student>

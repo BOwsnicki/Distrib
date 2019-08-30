@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : car.xml
+    Created on : February 24, 2011, 2:10 PM
+    Author     : Bernd
+    Description:
+        Purpose of the document follows.
+-->
+
+<car make="honda">
+   <licenseplate>USES4AA</licenseplate>
+   <vin>12312145245</vin>
+   <passenger>John Doe</passenger>
+   <passenger>Jane Doe</passenger>
+</car>
