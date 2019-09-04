@@ -1,0 +1,1 @@
+{"id":100,"name":"David","permanent":false,"role":"Manager","phoneNumbers":[123456,987654],"address":{"street":"1234 ABC St","city":"Baltimore","zipcode":21223}}
