@@ -1,0 +1,24 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>More Event Listeners</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form action=""
+              onsubmit=
+                  "(function (msg) {
+                      var text='Hello, '+msg;
+                      alert(text)})
+                  (document.getElementById('name').value);">
+            Name: <input type="text" id="name" name="name">
+            <input type="submit" name="submit">
+        </form>
+        <a href="http://google.com" 
+           onClick="function () {window.open('http://google.com');return false;}">Google</a>
+    </body>
+</html>

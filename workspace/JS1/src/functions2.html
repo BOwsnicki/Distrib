@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function go() {
+                document.getElementById("magic")
+                .addEventListener("mouseover",
+                    function () {alert("Told you!!!");},
+                    false);
+            }
+        </script>
+    </head>
+    <body onload="go();">
+        <div style="width:200" id="magic">Don't come near with the mouse!</div>
+    </body>
+</html>
