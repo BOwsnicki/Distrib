@@ -3,6 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/cop4856/NetBeansProjects/XMLParsing/src/library.xml</file>
+            <file>file:/home/cop4856/NetBeansProjects/XMLParsing/src/XMLTraverser.java</file>
+            <file>file:/home/cop4856/NetBeansProjects/XMLParsing/src/park.xml</file>
+            <file>file:/home/cop4856/NetBeansProjects/XMLParsing/src/recipe.xml</file>
+            <file>file:/home/cop4856/NetBeansProjects/XMLParsing/src/library2.xml</file>
+            <file>file:/home/cop4856/NetBeansProjects/XMLParsing/src/recipe/Recipe.java</file>
+        </group>
     </open-files>
 </project-private>

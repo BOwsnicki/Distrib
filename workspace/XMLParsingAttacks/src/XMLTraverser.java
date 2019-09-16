@@ -39,8 +39,8 @@ public class XMLTraverser {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setValidating(false);
             factory.setIgnoringElementContentWhitespace(true);
-            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-            factory.setAttribute(JDK_ENTITY_EXPANSION_LIMIT, 1000);
+            // factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            // factory.setAttribute(JDK_ENTITY_EXPANSION_LIMIT, 1000);
             builder = factory.newDocumentBuilder();
             XPathFactory xpfactory = XPathFactory.newInstance();
             path = xpfactory.newXPath();

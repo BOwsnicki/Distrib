@@ -65,6 +65,6 @@ public class XMLTraverser {
     }
     
     public static void main(String[] args) throws Exception {
-        XMLTraverser.traverse("src/library.xml");
+        XMLTraverser.traverse("src/park.xml");
     }
 }
