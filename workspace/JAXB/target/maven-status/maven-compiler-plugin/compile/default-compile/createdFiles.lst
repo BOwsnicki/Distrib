@@ -1,0 +1,6 @@
+com/uwf/jaxb/JAXBUnmarshalling.class
+recipe/ObjectFactory.class
+recipe/Instructions.class
+com/uwf/jaxb/JAXBMarshalling.class
+recipe/Ingredient.class
+recipe/Recipe.class
