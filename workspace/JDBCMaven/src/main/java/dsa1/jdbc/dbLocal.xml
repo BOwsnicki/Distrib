@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdbc-connection>
+  <driver>com.mysql.cj.jdbc.Driver</driver>
+  <protocol>jdbc:mysql</protocol>
+  <host>localhost</host>
+  <port>3306</port>
+  <schema>DVDLibrary</schema>
+  <user>root</user>
+  <password>mysql4me</password>
+</jdbc-connection>
