@@ -36,9 +36,8 @@ public class DVDServlet extends HttpServlet {
     public void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/xml");
+        response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String title = "Reading Request Parameters";
         out.println("<library>\n"
                 + "    <dvd id=\"1\">\n"
                 + "        <title>Breakfast at Tiffany's</title>\n"
