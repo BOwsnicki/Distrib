@@ -1,0 +1,12 @@
+{
+    "address": {
+        "city": "Baltimore",
+        "street": "1234 ABC St",
+        "zipcode": 21223
+    },
+    "id": 100,
+    "name": "David",
+    "permanent": false,
+    "phoneNumbers": [1234567, 9876543],
+    "role": "Manager"
+}

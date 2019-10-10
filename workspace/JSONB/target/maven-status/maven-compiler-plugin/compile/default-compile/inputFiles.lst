@@ -1,7 +1,3 @@
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/Address.java
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/EmployeeJSONParser.java
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/JSONBindings.java
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/EmployeeJSONGenerator.java
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/Employee.java
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/EmployeeJSONWriter.java
-/home/bernd/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/JsonParseTest.java
+/home/cop4856/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/Address.java
+/home/cop4856/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/Employee.java
+/home/cop4856/NetBeansProjects/JSONB/src/main/java/com/uwf/json1/JSONBindings.java
