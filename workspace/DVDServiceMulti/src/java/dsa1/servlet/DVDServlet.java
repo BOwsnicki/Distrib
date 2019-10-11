@@ -80,11 +80,6 @@ public class DVDServlet extends HttpServlet {
                         + "        <format>TV Series</format> \n"
                         + "        <genre>Comedy</genre>\n"
                         + "    </dvd>\n"
-                        + "    <dvd id=\"4\">\n"
-                        + "        <title>" + request.getHeader("Accept") + "</title>\n"
-                        + "        <format>TV Series</format> \n"
-                        + "        <genre>Comedy</genre>\n"
-                        + "    </dvd>\n"
                         + "</library>");
                 out.close();
                 break;
