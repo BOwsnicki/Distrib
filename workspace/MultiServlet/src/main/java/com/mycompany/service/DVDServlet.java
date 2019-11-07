@@ -16,11 +16,20 @@ public class DVDServlet extends HttpServlet {
     public void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("application/json");
-        PrintWriter out = response.getWriter();
         Model m = new Model();
-        // out.println(m.toXML());
-        out.println(m.toJSON());
+        PrintWriter out = response.getWriter();
+        switch (request.getHeader("Accept").toLowerCase()) {
+            case "application/xml":
+                response.setContentType("application/xml");
+                out.println(m.toXML());
+                break;
+            case "application/json":
+                response.setContentType("application/json");
+                out.println(m.toJSON());
+                break;
+            default:
+                response.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
+        }
     }
 
     @Override
