@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlRootElement(name = "dvd")
 @JsonbPropertyOrder(PropertyOrderStrategy.ANY)
-public final class DVD {
+public class DVD {
     @XmlAttribute
-    private int id;
+    private Integer id;
     private String title;
     private String format;
     private String genre;
@@ -25,10 +25,10 @@ public final class DVD {
     }
 
     public DVD(int id, String title, String format, String genre) {
-        setId(id);
-        setTitle(title);
-        setFormat(format);
-        setGenre(genre);
+        this.id = id;
+        this.title = title;
+        this.format = format;
+        this.genre = genre;
     }
 
     public String getTitle() {
@@ -55,16 +55,10 @@ public final class DVD {
         this.genre = genre;
     }
 
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
-
-    /**
-     * @param id the id to set
-     */
+    
     public void setId(int id) {
         this.id = id;
     }

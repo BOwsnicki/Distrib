@@ -42,8 +42,6 @@ public class Model {
 
     public String toXML() {
         try {
-            // output pretty printed
-            JAXB_MARSHALLER.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             StringWriter sw = new StringWriter();
             JAXB_MARSHALLER.marshal(library, sw);
             return sw.toString();
