@@ -70,6 +70,7 @@ public class Student implements Serializable {
         this.age = age;
     }
 
+    @XmlTransient
     public Integer getStudentID() {
         return studentID;
     }

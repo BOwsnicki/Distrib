@@ -19,6 +19,14 @@ public class Application {
     private final static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAExamplePU");
     private final static EntityManager em = emf.createEntityManager();
 
+    private static void releaseBook(int id) {
+        Book b = em.find(Book.class, id);
+        b.setBorrowerId(null);
+        em.getTransaction().begin();
+        em.persist(b);
+        em.getTransaction().commit();
+    }
+
     private static void removeStudentByName(String name) {
         List<Student> named = em.createNamedQuery("Student.findByName").setParameter("name", name).getResultList();
         em.getTransaction().begin();
@@ -29,17 +37,22 @@ public class Application {
         em.getTransaction().commit();
     }
 
+   
     public static void main(String[] args) {
         removeStudentByName("Roger Rabbit");
+        releaseBook(4);
         System.out.println("****************** Calling LibList ******************");
-        LibList.main(args);
+        LibList.allStudents();
+        LibList.allBooks();
+        LibList.booksWithBorrowers();
         System.out.println("****************** Calling JPAAdd ******************");
         JPAAdd.main(args);
         System.out.println("****************** Calling LibList ******************");
-        LibList.main(args);
+        LibList.allStudents();
+        System.out.println("****************** Calling LibUpdate ******************");
+        LibUpdate.main(args);
         System.out.println("****************** Calling LibList ******************");
-        // LibUpdate.main(args);
-        System.out.println("****************** Calling LibList ******************");
-        // LibList.main(args);
+        LibList.booksWithBorrowers();
+        LibList.studentsWithBooks();
     }
 }

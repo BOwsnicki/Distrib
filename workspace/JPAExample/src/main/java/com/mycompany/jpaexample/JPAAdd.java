@@ -32,7 +32,7 @@ public class JPAAdd {
         em.getTransaction().begin();
         em.persist(roger);
         em.getTransaction().commit();
-        
+
         System.out.println(roger);
     }
 }
