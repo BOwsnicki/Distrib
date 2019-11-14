@@ -7,8 +7,6 @@ package com.mycompany.jpaexample;
 
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -20,8 +18,6 @@ import javax.xml.bind.Marshaller;
 @SuppressWarnings({"empty-statement"})
 public class LibList {
 
-    private static final EntityManagerFactory EMF = Persistence.createEntityManagerFactory("JPAExamplePU");
-    private static final EntityManager EM = EMF.createEntityManager();
     private static Marshaller studentMarshaller;
     private static Marshaller bookMarshaller;
 
@@ -40,11 +36,10 @@ public class LibList {
         };
     }
 
-    public static void allStudents() {
+    public static void allStudents(EntityManager em) {
         System.out.println("\n******************************* Students **************************************\n");
         try {
-            EM.clear();
-            List<Student> sResults = EM.createNamedQuery("Student.findAll").getResultList();
+            List<Student> sResults = em.createNamedQuery("Student.findAll").getResultList();
             for (Student s : sResults) {
                 studentMarshaller.marshal(s, System.out);
             }
@@ -52,11 +47,10 @@ public class LibList {
         }
     }
 
-    public static void allBooks() {
+    public static void allBooks(EntityManager em) {
         System.out.println("\n********************************* Books ****************************************\n");
         try {
-            EM.clear();
-            List<Book> bResults = EM.createNamedQuery("Book.findAll").getResultList();
+            List<Book> bResults = em.createNamedQuery("Book.findAll").getResultList();
             for (Book b : bResults) {
                 bookMarshaller.marshal(b, System.out);
             }
@@ -64,11 +58,10 @@ public class LibList {
         }
     }
 
-    public static void booksWithBorrowers() {
+    public static void booksWithBorrowers(EntityManager em) {
         System.out.println("\n************************* Books with borrowers ********************************\n");
         try {
-            EM.clear();
-            List<Book> bResults = EM.createQuery("SELECT b FROM Student s, Book b WHERE b.borrowerId = s").getResultList();
+            List<Book> bResults = em.createQuery("SELECT b FROM Student s, Book b WHERE b.borrowerId = s").getResultList();
             for (Book b : bResults) {
                 bookMarshaller.marshal(b, System.out);
             }
@@ -76,11 +69,10 @@ public class LibList {
         };
     }
 
-    public static void studentsWithBooks() {
+    public static void studentsWithBooks(EntityManager em) {
         System.out.println("\n************************* Students with books *********************************\n");
         try {
-            EM.clear();
-            List<Object[]> borrowed = EM.createQuery("SELECT s,b FROM Student s, Book b WHERE b.borrowerId = s").getResultList();
+            List<Object[]> borrowed = em.createQuery("SELECT s,b FROM Student s, Book b WHERE b.borrowerId = s").getResultList();
             for (Object[] a : borrowed) {
                 Student s = (Student) a[0];
                 Book b = (Book) a[1];

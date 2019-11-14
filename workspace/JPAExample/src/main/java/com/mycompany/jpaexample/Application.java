@@ -16,43 +16,76 @@ import javax.persistence.Persistence;
  */
 public class Application {
 
-    private final static EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAExamplePU");
-    private final static EntityManager em = emf.createEntityManager();
+    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("JPAExamplePU");
+    private final static EntityManager EM = EMF.createEntityManager();
 
     private static void releaseBook(int id) {
-        Book b = em.find(Book.class, id);
+        Book b = EM.find(Book.class, id);
         b.setBorrowerId(null);
-        em.getTransaction().begin();
-        em.persist(b);
-        em.getTransaction().commit();
+        EM.getTransaction().begin();
+        EM.persist(b);
+        EM.getTransaction().commit();
     }
 
     private static void removeStudentByName(String name) {
-        List<Student> named = em.createNamedQuery("Student.findByName").setParameter("name", name).getResultList();
-        em.getTransaction().begin();
+        List<Student> named = EM.createNamedQuery("Student.findByName").setParameter("name", name).getResultList();
+        EM.getTransaction().begin();
         for (Student s : named) {
-            System.out.println(s);
-            em.remove(s);
+            EM.remove(s);
         }
-        em.getTransaction().commit();
+        EM.getTransaction().commit();
     }
 
-   
+    private static void addRoger() {
+        Student roger = new Student();
+        roger.setName("Roger Rabbit");
+        roger.setAge(33);
+        roger.setUWFId("4417777");
+        roger.setMajor("Geocentric Studies");
+        System.out.println(roger);
+
+        EM.getTransaction().begin();
+        EM.persist(roger);
+        EM.getTransaction().commit();
+
+        System.out.println(roger);
+    }
+
+    private static void borrowHarry() {
+        // Lisa Simpson (id 5) borrows  Harry Potter and the Deathly Hallows (4)
+        Student lisa = EM.find(Student.class, 5);
+        Book harry = EM.find(Book.class, 4);
+
+        // Now...
+        harry.setBorrowerId(lisa);    // nice!
+        EM.getTransaction().begin();
+        EM.persist(harry);
+        EM.getTransaction().commit();
+
+        System.out.println(harry);
+    }
+
     public static void main(String[] args) {
         removeStudentByName("Roger Rabbit");
         releaseBook(4);
         System.out.println("****************** Calling LibList ******************");
-        LibList.allStudents();
-        LibList.allBooks();
-        LibList.booksWithBorrowers();
-        System.out.println("****************** Calling JPAAdd ******************");
-        JPAAdd.main(args);
+        LibList.allStudents(EM);
+        LibList.allBooks(EM);
+        LibList.booksWithBorrowers(EM);
+        System.out.println("******************** Calling Add ********************");
+        addRoger();
         System.out.println("****************** Calling LibList ******************");
-        LibList.allStudents();
-        System.out.println("****************** Calling LibUpdate ******************");
-        LibUpdate.main(args);
+        LibList.allStudents(EM);
+        System.out.println("******************* Calling Update ******************");
+        borrowHarry();
         System.out.println("****************** Calling LibList ******************");
-        LibList.booksWithBorrowers();
-        LibList.studentsWithBooks();
+        LibList.booksWithBorrowers(EM);
+        LibList.studentsWithBooks(EM);
+        System.out.println("****************** Calling Remove *******************");
+        try {
+            removeStudentByName("Jane Doe");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

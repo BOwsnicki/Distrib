@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -101,6 +103,7 @@ public class Book implements Serializable {
         this.title = title;
     }
 
+    @XmlElement(name="borrower")
     public Student getBorrowerId() {
         return borrowerId;
     }
