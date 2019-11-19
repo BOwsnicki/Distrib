@@ -5,7 +5,7 @@
  */
 package com.mycompany.model;
 
-import com.mycompany.entities.Dvd;
+import com.mycompany.entities.DVD;
 import java.util.ArrayList;
 import java.util.List;
 import javax.json.bind.JsonbBuilder;
@@ -17,13 +17,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "library")
 public class Library {
 
-    private List<Dvd> dvd;
+    private List<DVD> dvd;
 
     public Library() {
         dvd = new ArrayList<>();
     }
 
-    public void add(Dvd d) {
+    public void add(DVD d) {
         dvd.add(d);
     }
 

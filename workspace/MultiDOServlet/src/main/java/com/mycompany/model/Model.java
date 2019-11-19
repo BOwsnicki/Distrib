@@ -5,8 +5,8 @@
  */
 package com.mycompany.model;
 
-import com.mycompany.entities.DvdDO;
-import com.mycompany.entities.Dvd;
+import com.mycompany.entities.DVDDO;
+import com.mycompany.entities.DVD;
 import java.io.StringWriter;
 import java.util.List;
 import java.util.logging.Level;
@@ -36,8 +36,8 @@ public class Model {
     public Model() {
         library = new Library();
 
-        List<Dvd> interm = new DvdDO().getResultList();
-        for (Dvd d : interm) {
+        List<DVD> interm = new DVDDO().getResultList();
+        for (DVD d : interm) {
             library.add(d);
         }
     }

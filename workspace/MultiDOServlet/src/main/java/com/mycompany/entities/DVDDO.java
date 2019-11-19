@@ -19,11 +19,11 @@ import java.util.logging.Logger;
  *
  * @author cop4856
  */
-public class DvdDO {
+public class DVDDO {
     // A very simple Data Object abstraction for DB access via JDBC
-    private List<Dvd> resultList;
+    private List<DVD> resultList;
 
-    public DvdDO() {
+    public DVDDO() {
         Statement stmt = null;
         Connection conn = null;
         ResultSet rs = null;
@@ -37,23 +37,23 @@ public class DvdDO {
             stmt = conn.createStatement();
             rs = stmt.executeQuery("SELECT * from DVDS");
             while (rs.next()) {
-                Dvd d = new Dvd(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
+                DVD d = new DVD(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
                 resultList.add(d);
             }
         } catch (ClassNotFoundException | SQLException e) {
-            Logger.getLogger(DvdDO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DVDDO.class.getName()).log(Level.SEVERE, null, e);
         } finally {
             try { // Did I mention I hate "try" in a "finally" clause...
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
                 if (conn != null) conn.close();
             } catch (SQLException e) {
-                Logger.getLogger(DvdDO.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(DVDDO.class.getName()).log(Level.SEVERE, null, e);
             }
         }
     }
 
-    public List<Dvd> getResultList() {
+    public List<DVD> getResultList() {
         return resultList;
     }
 }
