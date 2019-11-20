@@ -1,25 +1,78 @@
 
 This is also the template for your Project 4:
 
-It looks a lot like that Tomcat is the better choice to deploy and run JDBC based services than Payara
+It looks a lot like that TomEE is the better choice to deploy and run JDBC based services than Payara
 
-1. It's a MAVEN project, so it's all set to be built:
-   a. Right click on the project, chose "Build with Dependencies" - that might take a moment when done the first time
-   b. You can now run all main classes as usual
+So, we need to get TomEE on our machine, it's pretty easy:
 
-2. To make NB work as a DB client, first set up the mysql driver manually
-   a. In the "Services" tab, expand "Databases"
-   b. Right click "Databases" and select "New Connection"
-   c. Under "Locate Driver" select "MySQL (Connector/J Driver)"
-   d. It will not show a Driver File, so add one by clicking "ADD"
-   e. Navigate to your .m2 folder and down from there:
-      .m2/repository/mysql/mysql-connector-java/<version>/mysql-connector-java-<version>.jar
+1. Download (once)
 
-3. Establish the connection
-   a. Enter the root password "mysql4me" into the box 
-   b. In the JDBC URL box you will see 
-      jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull
-   c. Manually change that to
-      jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC
-      meaning you insert the correct time zone (UTC) into the server
-   d. Click finish
+Download the PLUME version over CLI: 
+    wget http://mirrors.sonic.net/apache/tomee/tomee-8.0.0/apache-tomee-8.0.0-plume.tar.gz
+    and unpack it on the Desktop
+    cd ~/Downloads
+    tar -xvzf apache-tomee-8.0.0-plume.tar.gz -C ~/Desktop
+or go to 
+    https://tomee.apache.org/download-ng.html and download the TAR.GZ version of TomEE plume
+    Firefox will ask you what to do - either 
+        Save File and then unpack it or
+        Open with Archive Manager: unpack to the Desktop
+
+2. Create admin user (once)
+
+TomEE works pretty much like the standard Tomcat, so you have to create users with different profiles.
+To make life easier we create one super user with all the privileges we need
+To do this we need to edit one text file (vi or the TextEditor app - your choice)
+
+This file is 
+    ~Desktop/apache-tomee-plume-8.0.0/conf/tomcat-users.xml
+
+Before the last line </tomcat-users> add
+  <user username="cop4856" password="mytomEE" roles="manager-gui, manager-script, admin"/>
+
+So the end of the file reads:
+  ...
+  <!-- Activate those lines to get access to TomEE GUI if added (tomee-webaccess) -->
+  <!--
+  <role rolename="tomee-admin" />
+  <user username="tomee" password="tomee" roles="tomee-admin,manager-gui" />
+  -->
+  <user username="cop4856" password="mytomEE" roles="manager-gui, manager-script, admin"/>
+</tomcat-users>
+
+That allows the user cop4856 with this password to run manager functions from the web interface,
+from a script connection (such as Netbeans) and to generally configure the server
+
+
+3. Start TomEE (every time)
+
+Run a command prompt in ~/Desktop/apache-tomee-plume-8.0.0/bin
+
+./startup.sh
+
+That's it!
+
+Open a browser and go to http://localhost:8080/ - there's the TomEE console
+
+
+4. Add TomEE to Netbeans (once)
+
+a. In the Services tab, right click on "Servers" --> Add Server...
+b. Select "Apache Tomcat or TomEE"
+c. In "Server Location" browse to ~/Desktop/apache-tomee-plume-8.0.0/ (the top directory)
+d. Enter user "cop4856" and password "mytomEE"
+
+Once you're through with this dialog, the server is known.
+
+
+5. Define the server for the MultiDOServlet
+
+a. Right click on the "MultiDOServlet" root in the Project tab
+b. Select "Properties" --> "Run" under "Categories" on the left
+c. Select "Apache Tomcat or TomEE"
+
+
+6. Rebuild the MultiDOServlet project
+
+a. Right click on the "MultiDOServlet" root in the Project tab --> "Build with Dependencies"
+a. Right click on the "MultiDOServlet" root in the Project tab --> "Run"

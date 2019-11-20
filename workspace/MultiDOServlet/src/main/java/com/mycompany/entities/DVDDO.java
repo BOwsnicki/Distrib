@@ -7,6 +7,7 @@ package com.mycompany.entities;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,18 +25,23 @@ public class DVDDO {
     private List<DVD> resultList;
 
     public DVDDO() {
-        Statement stmt = null;
+        PreparedStatement stmt = null;
         Connection conn = null;
         ResultSet rs = null;
         final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
         final String DB_URL = "jdbc:mysql://localhost:3306/DVDLibrary?serverTimezone=UTC&user=root&password=mysql4me";
-
+        final String QUERY = "SELECT * from DVDS";
+        
         try {
             resultList = new ArrayList<>();
             Class.forName(DRIVER_NAME);
             conn = DriverManager.getConnection(DB_URL);
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * from DVDS");
+
+            // stmt = conn.createStatement();
+            // rs = stmt.executeQuery(QUERY);
+            stmt = conn.prepareStatement(QUERY);
+            // Fill in Query parameters here:
+            rs = stmt.executeQuery();
             while (rs.next()) {
                 DVD d = new DVD(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
                 resultList.add(d);

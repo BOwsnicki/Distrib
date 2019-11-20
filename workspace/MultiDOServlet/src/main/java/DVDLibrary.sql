@@ -13,3 +13,5 @@ CREATE TABLE DVDS (
 INSERT INTO DVDS VALUES (1,"Breakfast at Tiffanys","Movie","Classic");
 INSERT INTO DVDS VALUES (2,"Contact","Movie","Science Fiction");
 INSERT INTO DVDS VALUES (3,"Little Britain","TV Series","Comedy");
+INSERT INTO DVDS VALUES (4,"Harry Potter Returns","Movie","Fantasy");
+INSERT INTO DVDS VALUES (5,"The Revenge of the Servlet","TV Series","Horror");
