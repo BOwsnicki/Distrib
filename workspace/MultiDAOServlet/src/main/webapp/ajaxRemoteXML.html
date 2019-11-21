@@ -2,44 +2,47 @@
 To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!doctype html>
 <html>
     <head>
-        <title>AJAX Remote - JSON</title>
+        <title>AJAX Remote - XML</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-        <script type="text/javascript">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
             $(document).ready(function () {
                 $.ajax({
                     beforeSend: function (req) {
-                        req.setRequestHeader("Accept", "application/json");
+                        req.setRequestHeader("Accept", "application/xml");
                     },
                     type: "GET",
-                    url: "http://localhost:8080/MultiDOServlet/service",
-                    dataType: "json",
+                    url: "http://localhost:8080/MultiDAOServlet/service",
+                    dataType: "xml",
+
                     success:
-                            function (obj) {
-                                obj.dvds.forEach(function (item, index) {
-                                    var title = item.title;
-                                    var genre = item.genre;
+                            function (xml) {
+                                $(xml).find('dvd').each(function () {
+                                    var title = $(this).find('title').text();
+                                    var genre = $(this).find('genre').text();
                                     $('<li></li>')
                                             .html(title + ' (' + genre + ')')
                                             .appendTo('#update-target ol');
-                                })
+                                }); //close each(
                             },
                     error: function (xhr, status, error) {
                         var errorMessage = xhr.status + ': ' + xhr.statusText;
                         alert('Error - ' + errorMessage);
-                    }
+                    } 
                 }); //close $.ajax(
             }); //close $(
         </script>
     </head>
     <body>
-        <h1>AJAX Remote - JSON</h1>
+        <h1>AJAX Remote - XML</h1>
 
-        <div id='update-target'>
+        <div id='update-target'>            
             <ol></ol>
         </div>
     </body>
+
+</body>
 </html>

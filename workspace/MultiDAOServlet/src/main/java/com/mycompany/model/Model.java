@@ -5,7 +5,7 @@
  */
 package com.mycompany.model;
 
-import com.mycompany.entities.DVDDO;
+import com.mycompany.entities.DVDDAO;
 import com.mycompany.entities.DVD;
 import java.io.StringWriter;
 import java.util.List;
@@ -36,8 +36,7 @@ public class Model {
     public Model() {
         library = new Library();
 
-        List<DVD> interm = new DVDDO().getResultList();
-        for (DVD d : interm) {
+        for (DVD d : new DVDDAO().findAll()) {
             library.add(d);
         }
     }
