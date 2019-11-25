@@ -9,7 +9,7 @@ It looks a lot like that Tomcat is the better choice to deploy and run JDBC base
 
 3. Copy the provided file "tomcat-users.xml" into the "conf" directory of the TomEE installation, like
    /home/cop4856/Desktop/apache-tomee-plume-8.0.0/conf. Make a backup of the original. 
-   This creates a user "cop856" with password "mytomee"
+   This creates a user "cop4856" with password "mytomee"
 
 4. Open a terminal in /home/cop4856/Desktop/apache-tomee-plume-8.0.0/bin and enter 
    ./startup.sh - it will return immediately, but it takes about 45 seconds until the server is there
